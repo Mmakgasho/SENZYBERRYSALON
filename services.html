@@ -446,11 +446,21 @@
   </div>
 </section>
   </main>
+<footer>
+  <!-- Use the same footer as your index.html -->
+</footer>
 
-  <footer>
-    <!-- Use the same footer as your index.html -->
-  </footer>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu').querySelector('ul');
 
-  <script src="script.js"></script>
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+  });
+</script>
+
+<script src="script.js"></script>
 </body>
 </html>
