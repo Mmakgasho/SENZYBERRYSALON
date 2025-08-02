@@ -912,3 +912,26 @@ footer a:hover {
     display: flex;
   }
 }
+/* Mobile styles */
+@media (max-width: 768px) {
+  .hairstyles-scroller {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
+  }
+  
+  .hairstyles-track {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: 20px; /* Space for scrollbar */
+  }
+  
+  .service-card {
+    flex: 0 0 auto;
+    width: 80vw; /* Adjust card width for mobile */
+    margin-right: 15px;
+  }
+  
+  .scroll-arrow {
+    display: none; /* Hide arrows on mobile - use native scrolling */
+  }
+}
