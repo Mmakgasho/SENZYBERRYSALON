@@ -1,193 +1,464 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Senzyberry Salon - Services</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      background: #ffe6f0;
-    }
-
-    header {
-      background-color: #ffb6c1;
-      padding: 15px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: 22px;
-      font-weight: bold;
-      color: white;
-    }
-
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-    }
-
-    .hamburger span {
-      width: 25px;
-      height: 3px;
-      background: white;
-      margin: 4px 0;
-      transition: 0.4s;
-    }
-
-    nav {
-      display: flex;
-      gap: 20px;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    nav.menu.active {
-      display: flex;
-      flex-direction: column;
-      background: #ffb6c1;
-      position: absolute;
-      top: 60px;
-      right: 20px;
-      padding: 15px;
-      border-radius: 10px;
-    }
-
-    main {
-      padding: 20px;
-    }
-
-    section {
-      margin-bottom: 50px;
-    }
-
-    section h2 {
-      margin-bottom: 10px;
-      color: #d63384;
-    }
-
-    .service-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .service {
-      background: white;
-      padding: 15px;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-
-    .service img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 8px;
-    }
-
-    .service p {
-      margin-top: 10px;
-    }
-
-    @media (max-width: 768px) {
-      .hamburger {
-        display: flex;
-      }
-
-      nav {
-        display: none;
-      }
-
-      nav.menu.active {
-        display: flex;
-      }
-    }
-  </style>
+  <title>Our Services | Senzyberry Hair Salon</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
   <header>
-    <div class="logo">Senzyberry</div>
-    <div class="hamburger" onclick="toggleMenu(this)">
-      <span></span>
-      <span></span>
-      <span></span>
+    <div class="logo-container">
+   
     </div>
-    <nav class="menu" id="navMenu">
-      <a href="index.html">Home</a>
-      <a href="#hairstyles">Hairstyles</a>
-      <a href="#lashes">Lashes</a>
-      <a href="#installation">Installation</a>
-      <a href="contact.html">Contact</a>
+    <nav id="navMenu">
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li class="dropdown">
+          <a href="services.html" class="dropbtn">SERVICES</a>
+          <div class="dropdown-content">
+            <a href="services.html#hairstyles">Hairstyles</a>
+            <a href="services.html#lashes">Lashes</a>
+            <a href="services.html#installation">Installation</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropbtn">CONTACT</a>
+          <div class="dropdown-content">
+            <a href="https://wa.me/+27 81 095 0971?text=Hello%20Senzyberry%20Salon,%20I'd%20like%20to%20book%20an%20appointment" target="_blank">
+              <i class="whatsapp-icon"></i> WhatsApp Us
+            </a>
+            <a href="tel:+27636756626">
+              <i class="phone-icon"></i> Call +27 81 095 0971
+            </a>
+          </div>
+        </li>
+      </ul>
     </nav>
-  </header>
+    <button class="menu-toggle" id="menuToggle">☰</button>
+</header>
 
-  <main>
-    <section id="hairstyles">
-      <h2>Hairstyles</h2>
-      <div class="service-grid">
-        <div class="service">
-          <img src="images/straight-up.jpg" alt="Straight Up" />
-          <p>Straight Up — from R200</p>
-        </div>
-        <div class="service">
-          <img src="images/box-braids.jpg" alt="Box Braids" />
-          <p>Box Braids — from R250</p>
-        </div>
-        <div class="service">
-          <img src="images/cornrows.jpg" alt="Cornrows" />
-          <p>Cornrows — from R80</p>
-        </div>
+  <main class="services-page">
+    <!-- Hero Banner -->
+    <section class="services-hero">
+      <div class="services-hero-logo">
+        <img src="images/logo.png" alt="Senzyberry Salon Logo" class="services-logo">
+      </div>
+      <div class="services-hero-content">
+        <h1>Our Premium Services</h1>
+        <p>Experience luxury transformations tailored just for you</p>
+      </div>
+    </section>
+    
+    <style>
+      .services-hero {
+        text-align: center;
+        padding: 80px 60px;
+        position: relative;
+      }
+      
+      .services-hero-logo {
+        margin-bottom: 20px;
+      }
+      
+      .services-logo {
+        max-width: 500px; /* Adjust size as needed */
+        height: auto;
+      }
+      
+      .services-hero-content h1 {
+        margin-top: 0;
+      }
+      
+      /* Optional animation */
+      .services-logo {
+        transition: transform 0.3s ease;
+      }
+      
+      .services-logo:hover {
+        transform: scale(1.05);
+      }
+      
+    </style>
+
+    <!-- Hairstyles Section -->
+      <body>
+        <section id="hairstyles" class="service-category">
+          <div class="section-header">
+            <h2>Hairstyling Services</h2>
+            <p>Professional styling for every hair type and preference</p>
+          </div>
+      
+          <div class="hairstyles-scroller">
+            <button class="scroll-arrow left-arrow" aria-label="Scroll left">‹</button>
+            
+            <div class="hairstyles-container">
+              <div class="hairstyles-track">
+                <!-- Service 1 -->
+                <div class="service-card">
+                  <div class="service-image" style="background-image: url('images/straight-up.jpg');background-position: center bottom 75%;"></div>
+                  <h3>Straight Up</h3>
+                  <ul class="service-details">
+                    <li>Custom haircut tailored to your face shape</li>
+                    <li>Includes shampoo & blowout</li>
+                    <li>60 minute session</li>
+                  </ul>
+                  <p class="price">From R200</p>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card">
+                  <div class="service-image" style="background-image: url('images/straight-back.jpeg');"></div>
+                  <h3>Straight Back</h3>
+                  <ul class="service-details">
+                    <li>Sleek straight back style</li>
+                    <li>Premium heat protection</li>
+                    <li>Includes finishing spray</li>
+                  </ul>
+                  <p class="price">From R190</p>
+                 
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card">
+                  <div class="service-image" style="background-image: url('images/free-hand.jpg');background-position: center bottom 70%;"></div>
+                  <h3>Free Hand</h3>
+                  <ul class="service-details">
+                    <li>Creative freehand designs</li>
+                    <li>Custom patterns</li>
+                    <li>Includes consultation</li>
+                  </ul>
+                  <p class="price">From R80</p>
+                 
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card">
+                  <div class="service-image" style="background-image: url('images/curly-pop.jpg');"></div>
+                  <h3>Curly Pop</h3>
+                  <ul class="service-details">
+                    <li>Enhanced natural curls</li>
+                    <li>Curl definition treatment</li>
+                    <li>Includes curl cream</li>
+                  </ul>
+                  <p class="price">From R200</p>
+                
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card">
+                  <div class="service-image" style="background-image: url('images/butterfly-twist.jpg');background-position: center bottom 40%"></div>
+                  <h3>Butterfly Twist</h3>
+                  <ul class="service-details">
+                    <li>Delicate twisted style</li>
+                    <li>Lightweight hold</li>
+                    <li>Includes moisture seal</li>
+                  </ul>
+                  <p class="price">From R200</p>
+                 
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="service-card">
+                  <div class="service-image" style="background-image: url('images/artificial-dread.jpg');background-position: center bottom 80%"></div>
+                  <h3>Artificial Dread</h3>
+                  <ul class="service-details">
+                    <li>Custom dreadlock installation</li>
+                    <li>Various sizing options</li>
+                    <li>Includes maintenance kit</li>
+                  </ul>
+                  <p class="price">From R250</p>
+                
+                </div>
+                
+                <!-- Service 7 -->
+                <div class="service-card">
+                  <div class="service-image" style="background-image: url('images/wool.jpg');background-position: center bottom 80%"></div>
+                  <h3>Wool</h3>
+                  <ul class="service-details">
+                    <li>Wool braiding techniques</li>
+                    <li>Colorful options available</li>
+                    <li>Gentle on edges</li>
+                  </ul>
+                  <p class="price">From R200</p>
+                 
+                </div>
+                
+                <!-- Service 8 -->
+                <div class="service-card">
+                  <div class="service-image" style="background-image: url('images/short-braids.jpg');background-position: center bottom 90%"></div>
+                  <h3>Short Braids</h3>
+                  <ul class="service-details">
+                    <li>Chic shorter length</li>
+                    <li>Low maintenance</li>
+                    <li>Includes end sealing</li>
+                  </ul>
+                  <p class="price">From R230</p>
+                </div>
+                
+                <!-- Service 9 -->
+                <div class="service-card">
+                  <div class="service-image" style="background-image: url('images/knotless.jpg');background-position: center bottom 75%;"></div>
+                  <h3>Braids/Knotless</h3>
+                  <ul class="service-details">
+                    <li>Seamless knotless technique</li>
+                    <li>Reduced tension</li>
+                    <li>Includes scalp treatment</li>
+                  </ul>
+                  <p class="price">From R250</p>
+                </div>
+                
+                <!-- Service 10 -->
+                <div class="service-card">
+                  <div class="service-image" style="background-image: url('images/tribal.jpg');"></div>
+                  <h3>Tribal Braids</h3>
+                  <ul class="service-details">
+                    <li>Cultural inspired designs</li>
+                    <li>Intricate patterns</li>
+                    <li>Includes protective oil</li>
+                  </ul>
+                  <p class="price">From R250</p>
+                </div>
+                
+                <!-- Service 11 -->
+                <div class="service-card">
+                  <div class="service-image" style="background-image: url('images/box-braids.jpg');background-position: center bottom 75%"></div>
+                  <h3>Box Braids</h3>
+                  <ul class="service-details">
+                    <li>Classic box braid style</li>
+                    <li>Multiple length options</li>
+                    <li>Includes braid spray</li>
+                  </ul>
+                  <p class="price">From R200</p>
+                </div>
+                
+                <!-- Service 12 -->
+                <div class="service-card">
+                  <div class="service-image" style="background-image: url('images/twist.jpg');background-position: center bottom 80%"></div>
+                  <h3>Twist</h3>
+                  <ul class="service-details">
+                    <li>Two-strand twisting</li>
+                    <li>Natural hair protection</li>
+                    <li>Includes twist cream</li>
+                  </ul>
+                  <p class="price">From R300</p>
+                </div>
+              </div>
+            </div>
+            
+            <button class="scroll-arrow right-arrow" aria-label="Scroll right">›</button>
+          </div>
+          
+          <div class="scroll-dots"></div>
+        </section>
+      
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            const track = document.querySelector('.hairstyles-track');
+            const container = document.querySelector('.hairstyles-container');
+            const leftArrow = document.querySelector('.left-arrow');
+            const rightArrow = document.querySelector('.right-arrow');
+            const dotsContainer = document.querySelector('.scroll-dots');
+            
+            const cards = document.querySelectorAll('.service-card');
+            const cardWidth = cards[0].offsetWidth + 25; // card width + gap
+            const containerWidth = container.offsetWidth;
+            const cardsPerView = Math.floor(containerWidth / cardWidth);
+            
+            
+            const totalDots = Math.ceil(cards.length / cardsPerView);
+            for (let i = 0; i < totalDots; i++) {
+              const dot = document.createElement('div');
+              dot.classList.add('scroll-dot');
+              if (i === 0) dot.classList.add('active');
+              dot.addEventListener('click', () => {
+                scrollToPosition(i);
+              });
+              dotsContainer.appendChild(dot);
+            }
+            
+            const dots = document.querySelectorAll('.scroll-dot');
+            let currentPosition = 0;
+            const maxPosition = cards.length - cardsPerView;
+            
+            function scrollToPosition(position) {
+              currentPosition = Math.min(Math.max(position, 0), maxPosition);
+              track.style.transform = `translateX(-${currentPosition * cardWidth}px)`;
+              
+              // Update active dot
+              const activeDotIndex = Math.floor(currentPosition / cardsPerView);
+              dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === activeDotIndex);
+              });
+            }
+            
+            rightArrow.addEventListener('click', () => {
+              scrollToPosition(currentPosition + 1);
+            });
+            
+            leftArrow.addEventListener('click', () => {
+              scrollToPosition(currentPosition - 1);
+            });
+            
+            // Handle swipe on mobile
+            let startX, moveX;
+            track.addEventListener('touchstart', (e) => {
+              startX = e.touches[0].clientX;
+            });
+            
+            track.addEventListener('touchmove', (e) => {
+              moveX = e.touches[0].clientX;
+            });
+            
+            track.addEventListener('touchend', () => {
+              if (startX - moveX > 50) { // Swipe left
+                scrollToPosition(currentPosition + 1);
+              } else if (moveX - startX > 50) { // Swipe right
+                scrollToPosition(currentPosition - 1);
+              }
+            });
+            
+            // Handle window resize
+            window.addEventListener('resize', () => {
+              const newContainerWidth = container.offsetWidth;
+              const newCardsPerView = Math.floor(newContainerWidth / cardWidth);
+              if (newCardsPerView !== cardsPerView) {
+                scrollToPosition(Math.floor(currentPosition / cardsPerView) * newCardsPerView);
+              }
+            });
+          });
+        </script>
+      </body>
+    
+      <!-- Scroll indicators -->
+      <div class="scroll-controls">
+        <button class="scroll-arrow left-arrow" aria-label="Scroll left">‹</button>
+        <div class="scroll-dots"></div>
+        <button class="scroll-arrow right-arrow" aria-label="Scroll right">›</button>
       </div>
     </section>
 
-    <section id="lashes">
-      <h2>Lashes</h2>
-      <div class="service-grid">
-        <div class="service">
-          <img src="images/lashes.jpg" alt="Individual Lashes" />
-          <p>Individual Lashes — from R150</p>
-        </div>
-        <div class="service">
-          <img src="images/cluster-lashes.jpg" alt="Cluster Lashes" />
-          <p>Cluster Lashes — from R100</p>
-        </div>
+    <!-- Lashes Section -->
+    <section id="lashes" class="service-category">
+      <div class="section-header">
+        <h2>Lash Services</h2>
+        <p>Enhance your natural beauty with our premium lash treatments</p>
       </div>
-    </section>
 
-    <section id="installation">
-      <h2>Installation</h2>
       <div class="service-grid">
-        <div class="service">
-          <img src="images/twists.jpg" alt="Twists" />
-          <p>Twists — from R200</p>
+        <!-- Service 1 -->
+        <div class="service-card">
+          <div class="service-image" style="background-image: url('images/classic-lashes.jpeg');"></div>
+          <h3>Classic Extensions</h3>
+          <ul class="service-details">
+            <li>Natural-looking lash extensions</li>
+            <li>1:1 application</li>
+            <li>Lasts 3-4 weeks</li>
+          </ul>
+          <p class="price">R150</p>
+        
+        </div>
+
+        <!-- Service 2 -->
+        <div class="service-card">
+          <div class="service-image" style="background-image: url('images/volume-lashes.jpeg');"></div>
+          <h3>Volume Lashes</h3>
+          <ul class="service-details">
+            <li>2D-6D volume options</li>
+            <li>Lightweight, fluffy look</li>
+            <li>Includes aftercare kit</li>
+          </ul>
+          <p class="price">R200</p>
+       
+        </div>
+
+        <!-- Service 3 -->
+        <div class="service-card">
+          <div class="service-image" style="background-image: url('images/lash-lift.jpeg');"></div>
+          <h3>Cat Eye</h3>
+          <ul class="service-details">
+            <li>No-extensions alternative</li>
+            <li>Lifts natural lashes</li>
+            <li>Results last 6-8 weeks</li>
+          </ul>
+          <p class="price">R250</p>
+         
         </div>
       </div>
     </section>
+  <!-- Installation Section -->
+<section id="installation" class="service-category">
+  <div class="section-header">
+    <h2>Installation Services</h2>
+    <p>Professional hair installation with premium quality hair</p>
+  </div>
+
+  <div class="service-grid">
+    <!-- Installation 1 -->
+    <div class="service-card">
+<div class="service-image" style="background-image: url('images/installation-1.jpeg'); background-position: center bottom 75%;"></div>
+      <h3>Basic Installation</h3>
+      <ul class="service-details">
+        <li>Professional application</li>
+        <li>Includes consultation</li>
+        <li>60 minute session</li>
+      </ul>
+      <p class="price">R180</p>
+     
+    </div>
+
+    <!-- Installation 2 -->
+    <div class="service-card">
+      <div class="service-image" style="background-image: url('images/installation-2.jpeg');"></div>
+      <h3>Premium Installation</h3>
+      <ul class="service-details">
+        <li>Advanced techniques</li>
+        <li>Includes aftercare products</li>
+        <li>90 minute session</li>
+      </ul>
+      <p class="price">R250</p>
+    
+    </div>
+
+    <!-- Installation 3 -->
+    <div class="service-card">
+      <div class="service-image" style="background-image: url('images/installation-3.jpeg');"></div>
+      <h3>VIP Installation</h3>
+      <ul class="service-details">
+        <li>Luxury experience</li>
+        <li>Custom design</li>
+        <li>Includes refreshments</li>
+        <li>120 minute session</li>
+      </ul>
+      <p class="price">R350</p>
+    
+    </div>
+  </div>
+</section>
+
+   <!-- Call to Action -->
+<section class="service-cta">
+  <h2>Ready for Your Transformation?</h2>
+  <p>Contact us directly to discuss your perfect look</p>
+  <div class="cta-buttons">
+    <a href="tel:+27810950971" class="btn btn-primary">Call Now</a>
+    <a href="https://wa.me/27810950971?text=Hello%20Senzyberry%20Salon,%20I'd%20like%20to%20book%20an%20appointment" class="btn btn-secondary">Book Now</a>
+  </div>
+</section>
   </main>
 
-  <script>
+  <footer>
+    <!-- Use the same footer as your index.html -->
+  </footer>
+  
+   <script>
     function toggleMenu(button) {
       const nav = document.getElementById("navMenu");
       nav.classList.toggle("active");
       button.classList.toggle("active");
     }
   </script>
-
-</body>
-</html>
+  
+  <script src="script.js"></script>
+  </body>
+  </html>
