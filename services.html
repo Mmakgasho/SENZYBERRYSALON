@@ -330,12 +330,7 @@
         </script>
       </body>
     
-      <!-- Scroll indicators -->
-      <div class="scroll-controls">
-        <button class="scroll-arrow left-arrow" aria-label="Scroll left">‹</button>
-        <div class="scroll-dots"></div>
-        <button class="scroll-arrow right-arrow" aria-label="Scroll right">›</button>
-      </div>
+    
     </section>
 
     <!-- Lashes Section -->
@@ -453,13 +448,20 @@
   
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const menuToggle = document.getElementById('menuToggle');
-      const navMenu = document.getElementById('navMenu').querySelector('ul');
+  const menuToggle = document.getElementById('menuToggle');
+  const navMenu = document.getElementById('navMenu').querySelector('ul');
   
-      menuToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-      });
+  menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+  });
+  
+  // Close menu when a link is clicked
+  document.querySelectorAll('#navMenu a').forEach(link => {
+    link.addEventListener('click', () => {
+      navMenu.classList.remove('active');
     });
+  });
+});
   </script>
   
   <script src="script.js"></script>
