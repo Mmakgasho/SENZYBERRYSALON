@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Our Services | Senzyberry Hair Salon</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -451,12 +451,15 @@
     <!-- Use the same footer as your index.html -->
   </footer>
   
-   <script>
-    function toggleMenu(button) {
-      const nav = document.getElementById("navMenu");
-      nav.classList.toggle("active");
-      button.classList.toggle("active");
-    }
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuToggle = document.getElementById('menuToggle');
+      const navMenu = document.getElementById('navMenu').querySelector('ul');
+  
+      menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+      });
+    });
   </script>
   
   <script src="script.js"></script>
