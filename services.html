@@ -6,134 +6,6 @@
   <title>Our Services | Senzyberry Hair Salon</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="style.css">
-  <style>
-    :root {
-      --primary: #ffb6c1;
-      --accent: #8a4f7d;
-      --white: #ffffff;
-    }
-    .services-hero {
-      text-align: center;
-      padding: 80px 20px;
-      position: relative;
-    }
-    .services-hero-logo {
-      margin-bottom: 20px;
-    }
-    .services-logo {
-      max-width: 300px;
-      height: auto;
-      transition: transform 0.3s ease;
-    }
-    .services-logo:hover {
-      transform: scale(1.05);
-    }
-    .services-hero-content h1 {
-      margin-top: 0;
-      font-family: 'Playfair Display', serif;
-      color: var(--accent);
-    }
-    .hairstyles-scroller {
-      position: relative;
-      overflow: hidden;
-    }
-    .hairstyles-container {
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-    }
-    .hairstyles-track {
-      display: flex;
-      gap: 25px;
-    }
-    .service-card {
-      min-width: 250px;
-      background: var(--white);
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      padding: 20px;
-    }
-    .service-image {
-      height: 200px;
-      background-size: cover;
-      border-radius: 10px;
-      background-color: #f0f0f0;
-    }
-    .service-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 25px;
-    }
-    .scroll-dots {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 10px;
-    }
-    .scroll-dot {
-      width: 10px;
-      height: 10px;
-      background: var(--primary);
-      border-radius: 50%;
-      cursor: pointer;
-    }
-    .scroll-dot.active {
-      background: var(--accent);
-    }
-    .scroll-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: var(--primary);
-      color: white;
-      border: none;
-      padding: 10px;
-      cursor: pointer;
-    }
-    .left-arrow { left: 0; }
-    .right-arrow { right: 0; }
-    .section-header {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-    .section-header h2 {
-      font-family: 'Playfair Display', serif;
-      color: var(--accent);
-      font-size: 2rem;
-    }
-    .btn {
-      background: var(--primary);
-      color: white;
-      padding: 12px 25px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 600;
-      display: inline-block;
-    }
-    .btn-secondary {
-      background: transparent;
-      border: 2px solid var(--primary);
-      color: var(--primary);
-    }
-    .cta-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-    }
-    @media (max-width: 768px) {
-      .services-hero { padding: 40px 20px; }
-      .services-logo { max-width: 200px; }
-      .hairstyles-container {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-      }
-      .hairstyles-container::-webkit-scrollbar { display: none; }
-      .hairstyles-track { flex-wrap: nowrap; }
-      .service-card { flex: 0 0 auto; }
-      .service-grid { display: flex; flex-direction: column; gap: 20px; }
-      .cta-buttons { flex-direction: column; gap: 15px; }
-    }
-  </style>
 </head>
 <body>
   <header>
@@ -215,118 +87,96 @@
               </ul>
               <p class="price">From R80</p>
             </div>
-            <!-- Add other hairstyle cards from your previous services.html -->
-             <!-- Service 4 -->
-                <div class="service-card">
-                  <div class="service-image" style="background-image: url('images/curly-pop.jpg');"></div>
-                  <h3>Curly Pop</h3>
-                  <ul class="service-details">
-                    <li>Enhanced natural curls</li>
-                    <li>Curl definition treatment</li>
-                    <li>Includes curl cream</li>
-                  </ul>
-                  <p class="price">From R200</p>
-                
-                </div>
-                
-                <!-- Service 5 -->
-                <div class="service-card">
-                  <div class="service-image" style="background-image: url('images/butterfly-twist.jpg');background-position: center bottom 40%"></div>
-                  <h3>Butterfly Twist</h3>
-                  <ul class="service-details">
-                    <li>Delicate twisted style</li>
-                    <li>Lightweight hold</li>
-                    <li>Includes moisture seal</li>
-                  </ul>
-                  <p class="price">From R200</p>
-                 
-                </div>
-                
-                <!-- Service 6 -->
-                <div class="service-card">
-                  <div class="service-image" style="background-image: url('images/artificial-dread.jpg');background-position: center bottom 80%"></div>
-                  <h3>Artificial Dread</h3>
-                  <ul class="service-details">
-                    <li>Custom dreadlock installation</li>
-                    <li>Various sizing options</li>
-                    <li>Includes maintenance kit</li>
-                  </ul>
-                  <p class="price">From R250</p>
-                
-                </div>
-                
-                <!-- Service 7 -->
-                <div class="service-card">
-                  <div class="service-image" style="background-image: url('images/wool.jpg');background-position: center bottom 80%"></div>
-                  <h3>Wool</h3>
-                  <ul class="service-details">
-                    <li>Wool braiding techniques</li>
-                    <li>Colorful options available</li>
-                    <li>Gentle on edges</li>
-                  </ul>
-                  <p class="price">From R200</p>
-                 
-                </div>
-                
-                <!-- Service 8 -->
-                <div class="service-card">
-                  <div class="service-image" style="background-image: url('images/short-braids.jpg');background-position: center bottom 90%"></div>
-                  <h3>Short Braids</h3>
-                  <ul class="service-details">
-                    <li>Chic shorter length</li>
-                    <li>Low maintenance</li>
-                    <li>Includes end sealing</li>
-                  </ul>
-                  <p class="price">From R230</p>
-                </div>
-                
-                <!-- Service 9 -->
-                <div class="service-card">
-                  <div class="service-image" style="background-image: url('images/knotless.jpg');background-position: center bottom 75%;"></div>
-                  <h3>Braids/Knotless</h3>
-                  <ul class="service-details">
-                    <li>Seamless knotless technique</li>
-                    <li>Reduced tension</li>
-                    <li>Includes scalp treatment</li>
-                  </ul>
-                  <p class="price">From R250</p>
-                </div>
-                
-                <!-- Service 10 -->
-                <div class="service-card">
-                  <div class="service-image" style="background-image: url('images/tribal.jpg');"></div>
-                  <h3>Tribal Braids</h3>
-                  <ul class="service-details">
-                    <li>Cultural inspired designs</li>
-                    <li>Intricate patterns</li>
-                    <li>Includes protective oil</li>
-                  </ul>
-                  <p class="price">From R250</p>
-                </div>
-                
-                <!-- Service 11 -->
-                <div class="service-card">
-                  <div class="service-image" style="background-image: url('images/box-braids.jpg');background-position: center bottom 75%"></div>
-                  <h3>Box Braids</h3>
-                  <ul class="service-details">
-                    <li>Classic box braid style</li>
-                    <li>Multiple length options</li>
-                    <li>Includes braid spray</li>
-                  </ul>
-                  <p class="price">From R200</p>
-                </div>
-                
-                <!-- Service 12 -->
-                <div class="service-card">
-                  <div class="service-image" style="background-image: url('images/twist.jpg');background-position: center bottom 80%"></div>
-                  <h3>Twist</h3>
-                  <ul class="service-details">
-                    <li>Two-strand twisting</li>
-                    <li>Natural hair protection</li>
-                    <li>Includes twist cream</li>
-                  </ul>
-                  <p class="price">From R300</p>
-                </div>
+            <div class="service-card">
+              <div class="service-image" style="background-image: url('images/curly-pop.jpg');"></div>
+              <h3>Curly Pop</h3>
+              <ul class="service-details">
+                <li>Enhanced natural curls</li>
+                <li>Curl definition treatment</li>
+                <li>Includes curl cream</li>
+              </ul>
+              <p class="price">From R200</p>
+            </div>
+            <div class="service-card">
+              <div class="service-image" style="background-image: url('images/butterfly-twist.jpg');background-position: center bottom 40%;"></div>
+              <h3>Butterfly Twist</h3>
+              <ul class="service-details">
+                <li>Delicate twisted style</li>
+                <li>Lightweight hold</li>
+                <li>Includes moisture seal</li>
+              </ul>
+              <p class="price">From R200</p>
+            </div>
+            <div class="service-card">
+              <div class="service-image" style="background-image: url('images/artificial-dread.jpg');background-position: center bottom 80%;"></div>
+              <h3>Artificial Dread</h3>
+              <ul class="service-details">
+                <li>Custom dreadlock installation</li>
+                <li>Various sizing options</li>
+                <li>Includes maintenance kit</li>
+              </ul>
+              <p class="price">From R250</p>
+            </div>
+            <div class="service-card">
+              <div class="service-image" style="background-image: url('images/wool.jpg');background-position: center bottom 80%;"></div>
+              <h3>Wool</h3>
+              <ul class="service-details">
+                <li>Wool braiding techniques</li>
+                <li>Colorful options available</li>
+                <li>Gentle on edges</li>
+              </ul>
+              <p class="price">From R200</p>
+            </div>
+            <div class="service-card">
+              <div class="service-image" style="background-image: url('images/short-braids.jpg');background-position: center bottom 90%;"></div>
+              <h3>Short Braids</h3>
+              <ul class="service-details">
+                <li>Chic shorter length</li>
+                <li>Low maintenance</li>
+                <li>Includes end sealing</li>
+              </ul>
+              <p class="price">From R230</p>
+            </div>
+            <div class="service-card">
+              <div class="service-image" style="background-image: url('images/knotless.jpg');background-position: center bottom 75%;"></div>
+              <h3>Braids/Knotless</h3>
+              <ul class="service-details">
+                <li>Seamless knotless technique</li>
+                <li>Reduced tension</li>
+                <li>Includes scalp treatment</li>
+              </ul>
+              <p class="price">From R250</p>
+            </div>
+            <div class="service-card">
+              <div class="service-image" style="background-image: url('images/tribal.jpg');"></div>
+              <h3>Tribal Braids</h3>
+              <ul class="service-details">
+                <li>Cultural inspired designs</li>
+                <li>Intricate patterns</li>
+                <li>Includes protective oil</li>
+              </ul>
+              <p class="price">From R250</p>
+            </div>
+            <div class="service-card">
+              <div class="service-image" style="background-image: url('images/box-braids.jpg');background-position: center bottom 75%;"></div>
+              <h3>Box Braids</h3>
+              <ul class="service-details">
+                <li>Classic box braid style</li>
+                <li>Multiple length options</li>
+                <li>Includes braid spray</li>
+              </ul>
+              <p class="price">From R200</p>
+            </div>
+            <div class="service-card">
+              <div class="service-image" style="background-image: url('images/twist.jpg');background-position: center bottom 80%;"></div>
+              <h3>Twist</h3>
+              <ul class="service-details">
+                <li>Two-strand twisting</li>
+                <li>Natural hair protection</li>
+                <li>Includes twist cream</li>
+              </ul>
+              <p class="price">From R300</p>
+            </div>
           </div>
         </div>
         <button class="scroll-arrow right-arrow" aria-label="Scroll right">›</button>
