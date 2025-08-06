@@ -292,7 +292,7 @@
       <i class="fas fa-spa"></i>
     </div>
   </footer>
-    <script>
+   <script>
     // Mobile Menu Toggle
     const menuToggle = document.getElementById('menuToggle');
     const navMenu = document.getElementById('navMenu');
@@ -331,6 +331,80 @@
         });
       });
     });
-  </script>
+
+    // Carousel functionality - CORRECTLY PLACED OUTSIDE THE PREVIOUS BLOCK
+    document.addEventListener('DOMContentLoaded', function() {
+      const track = document.querySelector('.hairstyles-track');
+      const cards = document.querySelectorAll('.service-card');
+      const leftArrow = document.querySelector('.left-arrow');
+      const rightArrow = document.querySelector('.right-arrow');
+      const cardWidth = cards[0].offsetWidth + 20; // card width + margin
+      const visibleCards = Math.floor(document.querySelector('.hairstyles-container').offsetWidth / cardWidth);
+      const totalCards = cards.length;
+      let currentPosition = 0;
+      let maxPosition = -((totalCards - visibleCards) * cardWidth);
+
+      // Update dots (if you have them)
+      function updateDots() {
+        const dots = document.querySelectorAll('.scroll-dots span');
+        if (dots.length > 0) {
+          const activeDot = Math.abs(currentPosition / cardWidth);
+          dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === activeDot);
+          });
+        }
+      }
+
+      // Move carousel
+      function moveCarousel() {
+        track.style.transform = `translateX(${currentPosition}px)`;
+        updateDots();
+        
+        // Disable arrows at extremes
+        leftArrow.disabled = currentPosition === 0;
+        rightArrow.disabled = currentPosition <= maxPosition;
+      }
+
+      // Arrow click handlers
+      leftArrow.addEventListener('click', () => {
+        currentPosition = Math.min(currentPosition + (cardWidth * visibleCards), 0);
+        moveCarousel();
+      });
+
+      rightArrow.addEventListener('click', () => {
+        currentPosition = Math.max(currentPosition - (cardWidth * visibleCards), maxPosition);
+        moveCarousel();
+      });
+
+      // Touch events for mobile
+      let touchStartX = 0;
+      let touchEndX = 0;
+
+      track.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      }, {passive: true});
+
+      track.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+      }, {passive: true});
+
+      function handleSwipe() {
+        const swipeThreshold = 50;
+        if (touchStartX - touchEndX > swipeThreshold) {
+          // Swipe left - move right
+          currentPosition = Math.max(currentPosition - (cardWidth * visibleCards), maxPosition);
+          moveCarousel();
+        } else if (touchEndX - touchStartX > swipeThreshold) {
+          // Swipe right - move left
+          currentPosition = Math.min(currentPosition + (cardWidth * visibleCards), 0);
+          moveCarousel();
+        }
+      }
+
+      // Initialize
+      moveCarousel();
+    });
+</script>
 </body>
 </html>
