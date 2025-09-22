@@ -398,7 +398,7 @@
       if (cards.length > 0) {
         const cardWidth = cards[0].offsetWidth + 25;
         const containerWidth = container.offsetWidth;
-        const cardsPerView = Math.floor(containerWidth / cardWidth);
+        const cardsPerView = Math.max(1, Math.floor(containerWidth / cardWidth));
         const totalDots = Math.ceil(cards.length / cardsPerView);
         if (cards.length > 1) {
           for (let i = 0; i < totalDots; i++) {
@@ -417,7 +417,7 @@
         }
         const dots = document.querySelectorAll('.scroll-dot');
         let currentPosition = 0;
-        const maxPosition = cards.length - cardsPerView;
+        const maxPosition = Math.max(0, cards.length - cardsPerView);
         function scrollToPosition(position) {
           currentPosition = Math.min(Math.max(position, 0), maxPosition);
           track.style.transform = `translateX(-${currentPosition * cardWidth}px)`;
@@ -442,7 +442,7 @@
         });
         window.addEventListener('resize', () => {
           const newContainerWidth = container.offsetWidth;
-          const newCardsPerView = Math.floor(newContainerWidth / cardWidth);
+          const newCardsPerView = Math.max(1, Math.floor(newContainerWidth / cardWidth));
           if (newCardsPerView !== cardsPerView) {
             scrollToPosition(Math.floor(currentPosition / cardsPerView) * newCardsPerView);
           }
