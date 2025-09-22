@@ -463,7 +463,7 @@
           const message = `Hello Senzyberry Salon,\n\nI'd like to book an appointment:\n- Name: ${fullName}\n- Phone: ${phone}\n- Service: ${service}\n- Preferred: ${formattedDate}\n- Notes: ${notes}\n\nThank you!`;
 
           const encoded = encodeURIComponent(message);
-          const businessNumber = '27726661260'; // international format without plus
+          const businessNumber = '27810950971'; // international format without plus
           const whatsappUrl = `https://api.whatsapp.com/send?phone=${businessNumber}&text=${encoded}`;
           // Use in-app navigation for better mobile behavior
           window.location.href = whatsappUrl;
