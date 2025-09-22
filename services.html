@@ -4,40 +4,44 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Our Services | Senzyberry Hair Salon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="images/logo.png" type="image/png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header id="mainHeader">
-  <div class="logo-container">
-    <a href="index.html" class="logo-text">Senzy<span>berry</span></a>
-  </div>
-  <nav id="navMenu">
-    <ul>
-      <li><a href="index.html">HOME</a></li>
-      <li class="dropdown">
-        <a href="services.html" class="dropbtn">SERVICES</a>
-        <div class="dropdown-content">
-          <a href="services.html#hairstyles">Hairstyles</a>
-          <a href="services.html#lashes">Lashes</a>
-          <a href="services.html#installation">Installation</a>
-        </div>
-      </li>
-      <li class="dropdown">
-        <a href="#" class="dropbtn">CONTACT</a>
-        <div class="dropdown-content">
-          <a href="https://wa.me/27810950971" target="_blank">
-            <i class="fab fa-whatsapp"></i> WhatsApp Us
-          </a>
-          <a href="tel:+27810950971">
-            <i class="fas fa-phone"></i> Call +27 81 095 0971
-          </a>
-        </div>
-      </li>
-    </ul>
-  </nav>
-  <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
-</header>
+  <header>
+    <div class="logo-container">
+      <a href="index.html" class="logo-text">Senzy<span>berry</span></a>
+    </div>
+    <nav id="navMenu">
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li class="dropdown">
+          <a href="services.html" class="dropbtn">SERVICES</a>
+          <div class="dropdown-content">
+            <a href="services.html#hairstyles">Hairstyles</a>
+            <a href="services.html#lashes">Lashes</a>
+            <a href="services.html#installation">Installation</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropbtn">CONTACT</a>
+          <div class="dropdown-content">
+            <a href="https://wa.me/+27810950971?text=Hello%20Senzyberry%20Salon,%20I'd%20like%20to%20book%20an%20appointment" target="_blank">
+              <i class="fab fa-whatsapp"></i> WhatsApp Us
+            </a>
+            <a href="tel:+27810950971">
+              <i class="fas fa-phone"></i> Call +27 81 095 0971
+            </a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+  </header>
   <main class="services-page">
     <section class="services-hero">
       <div class="services-hero-logo">
@@ -268,6 +272,69 @@
         <a href="https://wa.me/+27810950971?text=Hello%20Senzyberry%20Salon,%20I'd%20like%20to%20book%20an%20appointment" class="btn btn-secondary">Book Now</a>
       </div>
     </section>
+    <section id="booking" class="service-category">
+      <div class="section-header">
+        <h2>Book an Appointment</h2>
+        <p>Fill in your details and we’ll confirm your slot</p>
+      </div>
+      <form id="bookingForm" class="booking-form" autocomplete="on">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Your name" required autocomplete="name" autocapitalize="words">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="e.g. 081 095 0971" required autocomplete="tel" inputmode="tel">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="service">Select Service</label>
+            <select id="service" name="service" required>
+              <option value="" disabled selected>Choose a service</option>
+              <optgroup label="Hairstyles">
+                <option>Straight Up</option>
+                <option>Straight Back</option>
+                <option>Free Hand</option>
+                <option>Curly Pop</option>
+                <option>Butterfly Twist</option>
+                <option>Artificial Dread</option>
+                <option>Wool</option>
+                <option>Short Braids</option>
+                <option>Braids/Knotless</option>
+                <option>Tribal Braids</option>
+                <option>Box Braids</option>
+                <option>Twist</option>
+              </optgroup>
+              <optgroup label="Lashes">
+                <option>Classic Extensions</option>
+                <option>Volume Lashes</option>
+                <option>Cat Eye</option>
+              </optgroup>
+              <optgroup label="Installation">
+                <option>Basic Installation</option>
+                <option>Premium Installation</option>
+                <option>VIP Installation</option>
+              </optgroup>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="datetime">Preferred Date & Time</label>
+            <input type="datetime-local" id="datetime" name="datetime" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group full">
+            <label for="notes">Notes (optional)</label>
+            <textarea id="notes" name="notes" rows="4" placeholder="Any extra details or preferences..." inputmode="text"></textarea>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn">Send Booking via WhatsApp</button>
+        </div>
+      </form>
+    </section>
   </main>
   <footer>
     <div class="footer-content">
@@ -275,7 +342,7 @@
       <div class="footer-links">
         <a href="index.html">Home</a>
         <a href="services.html">Services</a>
-        <a href="https://wa.me/+27810950971">Book Now</a>
+        
       </div>
       <div class="contact-info">
         <p><i class="fas fa-map-marker-alt"></i> Tut South Campus, Pretoria</p>
@@ -292,119 +359,139 @@
       <i class="fas fa-spa"></i>
     </div>
   </footer>
-   <script>
-    // Mobile Menu Toggle
-    const menuToggle = document.getElementById('menuToggle');
-    const navMenu = document.getElementById('navMenu');
-    const mainHeader = document.getElementById('mainHeader');
-    
-    menuToggle.addEventListener('click', () => {
-      navMenu.querySelector('ul').classList.toggle('active');
-      menuToggle.innerHTML = navMenu.querySelector('ul').classList.contains('active') 
-        ? '<i class="fas fa-times"></i>' 
-        : '<i class="fas fa-bars"></i>';
-    });
-
-    // Close menu when clicking a link
-    document.querySelectorAll('nav a').forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.querySelector('ul').classList.remove('active');
-        menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuToggle = document.getElementById('menuToggle');
+      const navElement = document.getElementById('navMenu');
+      const navList = navElement.querySelector('ul');
+      menuToggle.addEventListener('click', () => {
+        navElement.classList.toggle('active');
+        navList.classList.toggle('active');
+        const isOpen = navElement.classList.contains('active');
+        menuToggle.setAttribute('aria-expanded', String(isOpen));
+        menuToggle.innerHTML = isOpen ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
       });
-    });
-
-    // Header scroll effect
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) {
-        mainHeader.classList.add('scrolled');
-      } else {
-        mainHeader.classList.remove('scrolled');
-      }
-    });
-
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
+      document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', () => {
+          navElement.classList.remove('active');
+          navList.classList.remove('active');
+          menuToggle.setAttribute('aria-expanded', 'false');
+          menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
         });
       });
-    });
-
-    // Carousel functionality - CORRECTLY PLACED OUTSIDE THE PREVIOUS BLOCK
-    document.addEventListener('DOMContentLoaded', function() {
+      // Close mobile menu on outside tap
+      document.addEventListener('click', (e) => {
+        const clickedInsideNav = navElement.contains(e.target) || menuToggle.contains(e.target);
+        if (!clickedInsideNav) {
+          navElement.classList.remove('active');
+          navList.classList.remove('active');
+          menuToggle.setAttribute('aria-expanded', 'false');
+          menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        }
+      });
       const track = document.querySelector('.hairstyles-track');
-      const cards = document.querySelectorAll('.service-card');
+      const container = document.querySelector('.hairstyles-container');
       const leftArrow = document.querySelector('.left-arrow');
       const rightArrow = document.querySelector('.right-arrow');
-      const cardWidth = cards[0].offsetWidth + 20; // card width + margin
-      const visibleCards = Math.floor(document.querySelector('.hairstyles-container').offsetWidth / cardWidth);
-      const totalCards = cards.length;
-      let currentPosition = 0;
-      let maxPosition = -((totalCards - visibleCards) * cardWidth);
-
-      // Update dots (if you have them)
-      function updateDots() {
-        const dots = document.querySelectorAll('.scroll-dots span');
-        if (dots.length > 0) {
-          const activeDot = Math.abs(currentPosition / cardWidth);
+      const dotsContainer = document.querySelector('.scroll-dots');
+      const cards = document.querySelectorAll('.service-card');
+      if (cards.length > 0) {
+        const cardWidth = cards[0].offsetWidth + 25;
+        const containerWidth = container.offsetWidth;
+        const cardsPerView = Math.floor(containerWidth / cardWidth);
+        const totalDots = Math.ceil(cards.length / cardsPerView);
+        if (cards.length > 1) {
+          for (let i = 0; i < totalDots; i++) {
+            const dot = document.createElement('div');
+            dot.classList.add('scroll-dot');
+            if (i === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => scrollToPosition(i));
+            dotsContainer.appendChild(dot);
+          }
+          rightArrow.addEventListener('click', () => scrollToPosition(currentPosition + 1));
+          leftArrow.addEventListener('click', () => scrollToPosition(currentPosition - 1));
+        } else {
+          leftArrow.style.display = 'none';
+          rightArrow.style.display = 'none';
+          dotsContainer.style.display = 'none';
+        }
+        const dots = document.querySelectorAll('.scroll-dot');
+        let currentPosition = 0;
+        const maxPosition = cards.length - cardsPerView;
+        function scrollToPosition(position) {
+          currentPosition = Math.min(Math.max(position, 0), maxPosition);
+          track.style.transform = `translateX(-${currentPosition * cardWidth}px)`;
+          const activeDotIndex = Math.floor(currentPosition / cardsPerView);
           dots.forEach((dot, index) => {
-            dot.classList.toggle('active', index === activeDot);
+            dot.classList.toggle('active', index === activeDotIndex);
           });
         }
+        let startX, moveX;
+        track.addEventListener('touchstart', (e) => {
+          startX = e.touches[0].clientX;
+        });
+        track.addEventListener('touchmove', (e) => {
+          moveX = e.touches[0].clientX;
+        });
+        track.addEventListener('touchend', () => {
+          if (startX - moveX > 50) {
+            scrollToPosition(currentPosition + 1);
+          } else if (moveX - startX > 50) {
+            scrollToPosition(currentPosition - 1);
+          }
+        });
+        window.addEventListener('resize', () => {
+          const newContainerWidth = container.offsetWidth;
+          const newCardsPerView = Math.floor(newContainerWidth / cardWidth);
+          if (newCardsPerView !== cardsPerView) {
+            scrollToPosition(Math.floor(currentPosition / cardsPerView) * newCardsPerView);
+          }
+        });
       }
+      // Booking form -> WhatsApp (mobile-friendly)
+      const bookingForm = document.getElementById('bookingForm');
+      if (bookingForm) {
+        bookingForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const fullName = (document.getElementById('fullName') || {}).value || '';
+          const phone = (document.getElementById('phone') || {}).value || '';
+          const service = (document.getElementById('service') || {}).value || '';
+          const datetime = (document.getElementById('datetime') || {}).value || '';
+          const notes = (document.getElementById('notes') || {}).value || '';
 
-      // Move carousel
-      function moveCarousel() {
-        track.style.transform = `translateX(${currentPosition}px)`;
-        updateDots();
-        
-        // Disable arrows at extremes
-        leftArrow.disabled = currentPosition === 0;
-        rightArrow.disabled = currentPosition <= maxPosition;
+          const formattedDate = datetime ? new Date(datetime).toLocaleString() : '';
+          const message = `Hello Senzyberry Salon,\n\nI'd like to book an appointment:\n- Name: ${fullName}\n- Phone: ${phone}\n- Service: ${service}\n- Preferred: ${formattedDate}\n- Notes: ${notes}\n\nThank you!`;
+
+          const encoded = encodeURIComponent(message);
+          const businessNumber = '27726661260'; // international format without plus
+          const whatsappUrl = `https://api.whatsapp.com/send?phone=${businessNumber}&text=${encoded}`;
+          // Use in-app navigation for better mobile behavior
+          window.location.href = whatsappUrl;
+        });
       }
-
-      // Arrow click handlers
-      leftArrow.addEventListener('click', () => {
-        currentPosition = Math.min(currentPosition + (cardWidth * visibleCards), 0);
-        moveCarousel();
-      });
-
-      rightArrow.addEventListener('click', () => {
-        currentPosition = Math.max(currentPosition - (cardWidth * visibleCards), maxPosition);
-        moveCarousel();
-      });
-
-      // Touch events for mobile
-      let touchStartX = 0;
-      let touchEndX = 0;
-
-      track.addEventListener('touchstart', (e) => {
-        touchStartX = e.changedTouches[0].screenX;
-      }, {passive: true});
-
-      track.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
-      }, {passive: true});
-
-      function handleSwipe() {
-        const swipeThreshold = 50;
-        if (touchStartX - touchEndX > swipeThreshold) {
-          // Swipe left - move right
-          currentPosition = Math.max(currentPosition - (cardWidth * visibleCards), maxPosition);
-          moveCarousel();
-        } else if (touchEndX - touchStartX > swipeThreshold) {
-          // Swipe right - move left
-          currentPosition = Math.min(currentPosition + (cardWidth * visibleCards), 0);
-          moveCarousel();
+      // Header scrolled state
+      const headerEl = document.querySelector('header');
+      const onScroll = () => {
+        if (window.scrollY > 10) {
+          headerEl.classList.add('scrolled');
+        } else {
+          headerEl.classList.remove('scrolled');
         }
-      }
+      };
+      onScroll();
+      window.addEventListener('scroll', onScroll, { passive: true });
 
-      // Initialize
-      moveCarousel();
+      // Prevent past dates for booking
+      const datetimeInput = document.getElementById('datetime');
+      if (datetimeInput) {
+        const now = new Date();
+        const pad = (n) => String(n).padStart(2, '0');
+        const local = new Date(now.getTime() - now.getTimezoneOffset() * 60000)
+          .toISOString()
+          .slice(0, 16);
+        datetimeInput.min = local;
+      }
     });
-</script>
+  </script>
 </body>
 </html>
